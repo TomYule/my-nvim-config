@@ -1,0 +1,61 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "vue code snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "vue",
+        "path": "./vue.json"
+      },
+      {
+        "language": "jade",
+        "path": "./vue-pug.json"
+      },
+      {
+        "language": "html",
+        "path": "./vue-template.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./vue-template.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./vue-script.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./vue-script-vuex.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./vue-script-router.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./nuxt-config.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./nuxt-script.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./vue-script.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./vue-script-vuex.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./vue-script-router.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./nuxt-config.json"
+      }
+    ]
+  }
+}
