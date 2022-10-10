@@ -9,7 +9,7 @@ local JDTLS_LOCATION = vim.fn.stdpath "data" .. "/mason/packages/jdtls"
 
 -- Data directory - change it to your liking
 local HOME = os.getenv "HOME"
-local WORKSPACE_PATH = HOME .. "/workspace/java/"
+local WORKSPACE_PATH = HOME .. "/mnt/d/IdeaProjects"
 
 -- Debugger installation location
 local DEBUGGER_LOCATION = HOME .. "/.local/share/nvim"

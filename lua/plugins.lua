@@ -210,6 +210,7 @@ return packer.startup(function(use)
     }
     use {
         "jakewvincent/mkdnflow.nvim",
+        rocks = 'luautf8',
         config = function()
             require("mkdnflow").setup {}
         end,
@@ -395,84 +396,32 @@ return packer.startup(function(use)
             })
             require("config.lsp").setup()
             require('mason-tool-installer').setup {
-
-              -- a list of all tools you want to ensure are installed upon
-              -- start; they should be the names Mason uses for each tool
-              ensure_installed = {
-
-                -- you can pin a tool to a particular version
-                { 'golangci-lint', version = '1.47.0' },
-
-                -- you can turn off/on auto_update per tool
-                { 'bash-language-server', auto_update = true },
-
-                'lua-language-server',
-                'vim-language-server',
-                'gopls',
-                'stylua',
-                'shellcheck',
-                'editorconfig-checker',
-                'gofumpt',
-                'golines',
-                'gomodifytags',
-                'gotests',
-                'impl',
-                'json-to-struct',
-                'luacheck',
-                'misspell',
-                'revive',
-                'shellcheck',
-                'shfmt',
-                'staticcheck',
-                'vint',
-              },
-
-              -- if set to true this will check each tool for updates. If updates
-              -- are available the tool will be updated. This setting does not
-              -- affect :MasonToolsUpdate or :MasonToolsInstall.
-              -- Default: false
-              auto_update = false,
-
-              -- automatically install / update on startup. If set to false nothing
-              -- will happen on startup. You can use :MasonToolsInstall or
-              -- :MasonToolsUpdate to install tools and check for updates.
-              -- Default: true
-              run_on_start = true,
-
-              -- set a delay (in ms) before the installation starts. This is only
-              -- effective if run_on_start is set to true.
-              -- e.g.: 5000 = 5 second delay, 10000 = 10 second delay, etc...
-              -- Default: 0
-              start_delay = 3000, -- 3 second delay
             }
+        end,
+    }
+    use {
+        "j-hui/fidget.nvim",
+        config = function()
+            require("fidget").setup {}
         end,
     }
 
     use {
+        "jose-elias-alvarez/null-ls.nvim",
         "jayp0521/mason-null-ls.nvim",
-        after = {
-            "null-ls.nvim",
-            "mason.nvim",
-        },
+        "folke/lua-dev.nvim",
+        "RRethy/vim-illuminate",
+        "b0o/schemastore.nvim",
+        "jose-elias-alvarez/typescript.nvim",
+
         config = function()
-            require("mason-null-ls").setup({
-                automatic_installation = true,
-            })
-            require("mason-null-ls").check_install(true)
+            require("mason").setup()
+            require("null-ls").setup()
+            require("mason-null-ls").setup()
         end,
          requires = {
-                    "folke/lua-dev.nvim",
-                    "RRethy/vim-illuminate",
-                    "jose-elias-alvarez/null-ls.nvim",
-                    {
-                        "j-hui/fidget.nvim",
-                        config = function()
-                            require("fidget").setup {}
-                        end,
-                    },
-                    "b0o/schemastore.nvim",
-                    "jose-elias-alvarez/typescript.nvim",
         },
+
     }
     -- trouble.nvim
     use {
@@ -547,7 +496,9 @@ return packer.startup(function(use)
             require("user.toggleterm").setup()
         end,
     }
-
+    use {
+        "theHamsta/nvim-dap-virtual-text",
+    }
     -- Debugging
     use {
         "mfussenegger/nvim-dap",
